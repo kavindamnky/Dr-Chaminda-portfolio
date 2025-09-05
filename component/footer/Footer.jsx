@@ -1,60 +1,34 @@
 import React from "react";
-import "./footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-content">
-          {/* Main Footer Content */}
-          <div className="footer-main">
-            <div className="footer-brand">
-              <h3 className="footer-logo">
-                Kavinda <span className="footer-accent">Narangoda</span>
-              </h3>
-              <p className="footer-description">
-                Undergraduate IT student at University Of Moratuwa, passionate about creating 
-                digital experiences through development.
-              </p>
-            </div>
-
-            <div className="footer-links-section">
-              <div className="footer-column">
-                <h4 className="footer-heading">Quick Links</h4>
-                <nav className="footer-nav">
-                  <a href="#home" className="footer-link">Home</a>
-                  <a href="#about" className="footer-link">About</a>
-                  <a href="#projects" className="footer-link">Projects</a>
-                  <a href="#contact" className="footer-link">Contact</a>
-                </nav>
-              </div>
-
-              <div className="footer-column">
-                <h4 className="footer-heading">Connect</h4>
-                <div className="footer-social">
-                  <a href="#" className="footer-link" aria-label="LinkedIn">
-                    <span>LinkedIn</span>
-                  </a>
-                  <a href="#" className="footer-link" aria-label="GitHub">
-                    <span>GitHub</span>
-                  </a>
-                  <a href="#" className="footer-link" aria-label="Email">
-                    <span>Email</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+    <footer
+      className="w-full text-white py-8 px-4"
+      style={{ backgroundColor: "#00436D" }}
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          {/* Left side - Copyright */}
+          <div className="text-center md:text-left">
+            <p className="text-sm md:text-base font-medium">
+              Copyright © 2024. All rights reserved.
+            </p>
           </div>
 
-          {/* Footer Bottom */}
-          <div className="footer-bottom">
-            <div className="footer-copyright">
-              <p>&copy; 2025 Himsara G.W.S. All rights reserved.</p>
-            </div>
-            <div className="footer-legal">
-              <a href="#" className="footer-legal-link">Privacy Policy</a>
-              <a href="#" className="footer-legal-link">Terms of Service</a>
-            </div>
+          {/* Right side - Links */}
+          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+            <a
+              href="#privacy"
+              className="text-sm md:text-base font-medium hover:text-gray-300 transition-colors duration-200"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#terms"
+              className="text-sm md:text-base font-medium hover:text-gray-300 transition-colors duration-200"
+            >
+              Terms & Conditions
+            </a>
           </div>
         </div>
       </div>

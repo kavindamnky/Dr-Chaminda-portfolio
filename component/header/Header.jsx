@@ -1,132 +1,132 @@
 import React, { useState, useEffect } from "react";
-import "./header.css";
 
 const Header = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [textLoaded, setTextLoaded] = useState(false);
+  const [illustrationLoaded, setIllustrationLoaded] = useState(false);
 
   useEffect(() => {
-    // Simulate component loading
-    const timer = setTimeout(() => {
+    // Staggered loading animation sequence
+    const loadingSequence = async () => {
+      // Initial delay
+      await new Promise((resolve) => setTimeout(resolve, 300));
       setIsLoaded(true);
-    }, 100);
 
-    return () => clearTimeout(timer);
+      // Text animation
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setTextLoaded(true);
+
+      // Illustration
+      await new Promise((resolve) => setTimeout(resolve, 700));
+      setIllustrationLoaded(true);
+    };
+
+    loadingSequence();
   }, []);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
-
   return (
-    <div id="head" className="head">
-      <div className={`maintext flex items-center justify-between gap-8 ${isLoaded ? 'loaded' : ''}`}>
-        
-        {/* Left side - Text content */}
-        <div className="flex-1 min-w-0">
-          
-          {/* Status Section with Loading Animation */}
-          <div className="avwork typewriter-container">
-            <span className="neon-dot"></span>
-            <span className="typewriter-text">Available for Work.</span>
-          </div>
+    <div
+      id="head"
+      className="min-h-screen bg-gradient-to-br from-gray-50 to-white flex items-center relative overflow-hidden"
+    >
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/6 w-32 h-32 bg-[#00436D] rounded-full blur-2xl animate-pulse"></div>
+        <div
+          className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-[#00436D] rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+      </div>
 
-          {/* Hero Title Section */}
-          <div className="hero-title">
-            <span className="block">Building Smart</span>
-            <span className="block">Solutions for a</span>
-            <span className="block">Digital World.</span>
-          </div>
-          
-          {/* CTA Button */}
-          <button className='cvbtn group'>
-            <div className="btntext relative z-10">
-              Download my CV
+      <div
+        className={`w-full max-w-7xl mx-auto px-6 lg:px-8 transition-all duration-1000 relative z-10 ${
+          isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
+          {/* Left side - Text content */}
+          <div className="flex-1 text-left space-y-4 max-w-2xl">
+            {/* Welcome text */}
+            <div
+              className={`transition-all duration-1000 delay-300 ${
+                textLoaded
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-8"
+              }`}
+            >
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-3">
+                Welcome to
+              </h2>
             </div>
-            {/* Hover effect background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-          </button>
-        </div>
 
-        {/* Right side - Profile Image Section */}
-        <div className="profile-section flex-shrink-0 hidden lg:block">
-          <div className="relative group">
-            
-            {/* Loading skeleton */}
-            {!imageLoaded && (
-              <div className="absolute inset-0 bg-gray-700 rounded-full animate-pulse"></div>
-            )}
-            
-            {/* Background glow effect */}
-            <div className="profile-glow absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-all duration-500"></div>
-            
-            {/* Main image container */}
-            <div className="relative">
-              <div className="profile-image-container w-80 h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
-                <img 
-                  src="./pic.png" 
-                  alt="Henry - Professional Web Developer" 
-                  className={`w-full h-full object-cover transition-all duration-500 ${
-                    imageLoaded 
-                      ? 'grayscale hover:grayscale-0 opacity-100' 
-                      : 'opacity-0'
-                  }`}
-                  onLoad={handleImageLoad}
-                  loading="lazy"
+            {/* Name in rounded rectangle */}
+            <div
+              className={`transition-all duration-1000 delay-500 ${
+                textLoaded
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-8"
+              }`}
+            >
+              <div className="inline-block border-3 border-[#00436D] rounded-2xl px-6 py-3 mb-4">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#00436D]">
+                  Dr Chaminda Kumara
+                </h1>
+              </div>
+            </div>
+
+            {/* Tagline */}
+            <div
+              className={`transition-all duration-1000 delay-700 ${
+                textLoaded
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-8"
+              }`}
+            >
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-light leading-relaxed">
+                Bridging Clinical Excellence with Strategic
+                <br />
+                Healthcare Leadership.
+              </p>
+            </div>
+          </div>
+
+          {/* Right side - Custom Image */}
+          <div className="flex-1 relative flex justify-center lg:justify-end">
+            <div
+              className={`transition-all duration-1000 delay-900 ${
+                illustrationLoaded
+                  ? "opacity-100 scale-100"
+                  : "opacity-0 scale-95"
+              }`}
+            >
+              {/* Image Container */}
+              <div className="relative w-80 h-80 lg:w-180 lg:h-180 mt-30">
+                <img
+                  src="https://res.cloudinary.com/dzummwk1a/image/upload/v1757092045/Screenshot_2025-09-05_221838_p8mobf.png"
+                  alt="Dr Chaminda Kumara"
                 />
               </div>
-              
-              {/* Decorative cursor icon */}
-              <div className="absolute top-4 right-4 text-white text-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="animate-pulse">
-                  <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/>
-                </svg>
-              </div>
-            </div>
-
-            {/* Floating decorative elements */}
-            <div className="absolute -top-2 -left-2 w-3 h-3 bg-blue-400 rounded-full animate-ping"></div>
-            <div className="absolute -bottom-4 -right-4 w-4 h-4 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/3 -left-6 w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-          </div>
-        </div>
-
-        {/* Mobile Profile Image */}
-        <div className="profile-section lg:hidden w-full flex justify-center mb-8">
-          <div className="relative group">
-            
-            {/* Loading skeleton */}
-            {!imageLoaded && (
-              <div className="absolute inset-0 bg-gray-700 rounded-full animate-pulse"></div>
-            )}
-            
-            {/* Background glow effect */}
-            <div className="profile-glow absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl opacity-50"></div>
-            
-            {/* Main image container */}
-            <div className="relative">
-              <div className="profile-image-container w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
-                <img 
-                  src="./pic.png" 
-                  alt="Henry - Professional Web Developer" 
-                  className={`w-full h-full object-cover transition-all duration-500 ${
-                    imageLoaded 
-                      ? 'grayscale hover:grayscale-0 opacity-100' 
-                      : 'opacity-0'
-                  }`}
-                  onLoad={handleImageLoad}
-                  loading="lazy"
-                />
-              </div>
-              
-              {/* Floating decorative elements */}
-              <div className="absolute -top-2 -left-2 w-3 h-3 bg-blue-400 rounded-full animate-ping"></div>
-              <div className="absolute -bottom-4 -right-4 w-4 h-4 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
             </div>
           </div>
         </div>
-        
-      </div>           
+      </div>
+
+      {/* Custom CSS animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 };

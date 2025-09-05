@@ -3,9 +3,13 @@ import './App.css'
 import Navbar from '../component/navbar/Navbar'
 import Header from '../component/header/Header'
 import Aboutme from '../component/About/Aboutme'
+import Competencies from '../component/Competencies/Competencies'
 import Service from '../component/services_/Service'
-import Contact from '../component/contact/Contact'
+import LeadershipManagement from '../component/Leadership/Leadership'
+import HighlightsGallery from '../component/Highlights/Highlights' 
+import HRBlogUI from '../component/HRBlogUI/HRBlogUI'
 import Footer from '../component/footer/Footer'
+import ContactForm from '../component/contact/Contact'
 
 
 function App() {
@@ -17,8 +21,11 @@ function App() {
 <Header/>
 <Aboutme/>
 <Service/>
-
-<Contact/>
+<Competencies/>
+<LeadershipManagement/>
+<HighlightsGallery/>
+<HRBlogUI/>
+<ContactForm/>
 <Footer/>
     </>
   )
