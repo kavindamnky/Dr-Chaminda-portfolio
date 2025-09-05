@@ -1,4 +1,4 @@
-# Dr-Chaminda-portfolio
+d# Dr-Chaminda-portfolio
 
 A personal portfolio website built with React, showcasing projects, skills, and experience.
 
@@ -6,19 +6,13 @@ A personal portfolio website built with React, showcasing projects, skills, and 
 
 ## Table of Contents
 
-- [Demo](#demo)
+d
 - [Features](#features)
 - [Installation](#installation)
 - [Available Scripts](#available-scripts)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
-
----
-
-## Demo
-
-You can view the live demo [here](#) *(replace with your hosted link if available).*
 
 ---
 
