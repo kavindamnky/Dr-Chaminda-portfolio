@@ -1,4 +1,4 @@
-# Dr. Chaminda Portfolio
+#<center> Dr. Chaminda Portfolio
 
 <p align="center">
     <img src="portfolio-logo.png" alt="Dr. Chaminda Portfolio" width="200"/>
