@@ -1,4 +1,7 @@
-<p align="center"> #Dr. Chaminda Portfolio
+<h2 align="center">
+    Dr. Chaminda Portfolio
+</h2>
+
 
 <p align="center">
     <img src="portfolio-logo.png" alt="Dr. Chaminda Portfolio" width="200"/>
