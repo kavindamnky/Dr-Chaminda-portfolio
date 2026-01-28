@@ -4,7 +4,7 @@
 
 
 <p align="center">
-    <img src="portfolio-logo.png" alt="Dr. Chaminda Portfolio" width="200"/>
+    <img src="https://cdn.discordapp.com/attachments/1221904791647686746/1465962868573732864/Screenshot_2025-09-05_230120_copy_kplyz1.png?ex=697b03d0&is=6979b250&hm=41d96d0bf176a2da6b75f86a29623085b8fdb4e4757ef021dabe15d4644b6317&" alt="Dr. Chaminda Portfolio" width="200"/>
 </p>
 
 <p align="center">
